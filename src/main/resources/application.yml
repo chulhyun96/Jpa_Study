@@ -1,1 +1,20 @@
-spring.application.name=japshop
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/jpashop
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+    open-in-view: false
+
+logging:
+  pattern:
+    console: "%yellow(%d{yyyy-MM-dd HH:mm:ss}) [%thread] %-5level %red(%logger{36}) - %cyan(%msg%n)"
+  level:
+    org.hibernate.sql: debug
+    org.hibernate: trace
