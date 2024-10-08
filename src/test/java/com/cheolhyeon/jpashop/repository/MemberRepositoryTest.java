@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,7 +22,7 @@ class MemberRepositoryTest {
     @Transactional
     void doTest() {
         //given
-        Member newMember = Member.builder().name("MemberA").build();
+        Member newMember = Member.builder().name("MemberB").build();
         //when
         memberRepository.save(newMember);
         Member findMember = memberRepository.findById(newMember.getId()).get();

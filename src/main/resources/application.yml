@@ -10,11 +10,13 @@ spring:
       ddl-auto: create
     properties:
       hibernate:
+        format_sql: true
     open-in-view: false
+
 
 logging:
   pattern:
-    console: "%yellow(%d{yyyy-MM-dd HH:mm:ss}) [%thread] %-5level %red(%logger{36}) - %cyan(%msg%n)"
+    console: "%yellow(%d{yyyy-MM-dd HH:mm:ss}) [%thread] %green(%-5level) %red(%logger{36}) - %cyan(%msg%n)"
   level:
     org.hibernate.sql: debug
     org.hibernate: trace
